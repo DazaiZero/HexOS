@@ -5,26 +5,19 @@ use core::panic::PanicInfo;
 
 mod vga_buffer;
 
-static HELLO: &[u8] = b"Welcome on First Boot of HexOS Decentralized Operating System ...";
-
 #[no_mangle] 
 pub extern "C" fn _start() -> ! {
-    //let vga_buffer = 0xb8000 as *mut u8;
-
-    vga_buffer::print_something();
-
-    /* for (i, &byte) in HELLO.iter().enumerate() {
-        unsafe {
-            *vga_buffer.offset(i as isize * 2) = byte;
-            *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
-        }
-    } */
+    
+    printlnHexOS!("Hex OS VGA Adapter :: Println macro implemented");
 
     loop {}
 }
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
+    
+    printlnHexOS!("{}",_info);
+
     loop {}
 }
 
