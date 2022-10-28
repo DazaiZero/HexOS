@@ -10,10 +10,17 @@ use hexosv10::printlnHexOS;
 #[no_mangle] 
 pub extern "C" fn _start() -> ! {
     
-    printlnHexOS!("Hex OS : Custom Testing Framework ");
+    printlnHexOS!("Hex OS : CPU Exceptions ");
+
+    hexosv10::init();
+
+    x86_64::instructions::interrupts::int3();
+
 
     #[cfg(test)]
     test_main();
+
+    printlnHexOS!("It Dit Not Crash!");
 
     loop {}
 }
