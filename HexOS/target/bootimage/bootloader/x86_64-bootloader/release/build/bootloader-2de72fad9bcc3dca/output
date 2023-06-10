@@ -1,0 +1,7 @@
+cargo:rerun-if-changed=C:\Projects\HexOS\HexOS\HexOS\Cargo.toml
+cargo:rustc-link-search=native=C:\Projects\HexOS\HexOS\HexOS\target\bootimage\bootloader\x86_64-bootloader\release\build\bootloader-2de72fad9bcc3dca\out
+cargo:rustc-link-lib=static=kernel_bin-stack_overflow-98a89ecec28d9f2f
+cargo:rerun-if-env-changed=KERNEL
+cargo:rerun-if-env-changed=KERNEL_MANIFEST
+cargo:rerun-if-changed=\\?\C:\Projects\HexOS\HexOS\HexOS\target\x86_64-HexOs\debug\deps\stack_overflow-98a89ecec28d9f2f
+cargo:rerun-if-changed=build.rs
